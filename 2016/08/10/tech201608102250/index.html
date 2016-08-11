@@ -12,25 +12,16 @@
   
 </title>
 
-<meta name="description" content="Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。  
-代码思想主要实现ListView接口OnScrollListener，重写其中的断onScroll方法，通过判断ListView的item的position触发onScroll方法，提前进行网络请求并将结果添加进相关链表中。  
-
-例如，限定每次加载十个">
+<meta name="description" content="Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ListView滑动刷新">
 <meta property="og:url" content="http://yiva.github.io/2016/08/10/tech201608102250/index.html">
 <meta property="og:site_name" content="华丽小屋">
-<meta property="og:description" content="Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。  
-代码思想主要实现ListView接口OnScrollListener，重写其中的断onScroll方法，通过判断ListView的item的position触发onScroll方法，提前进行网络请求并将结果添加进相关链表中。  
-
-例如，限定每次加载十个">
-<meta property="og:updated_time" content="2016-08-11T02:30:38.581Z">
+<meta property="og:description" content="Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。">
+<meta property="og:updated_time" content="2016-08-11T02:41:40.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ListView滑动刷新">
-<meta name="twitter:description" content="Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。  
-代码思想主要实现ListView接口OnScrollListener，重写其中的断onScroll方法，通过判断ListView的item的position触发onScroll方法，提前进行网络请求并将结果添加进相关链表中。  
-
-例如，限定每次加载十个">
+<meta name="twitter:description" content="Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。">
 
 
   <link rel="alternative" href="/atom.xml" title="华丽小屋" type="application/atom+xml">
@@ -85,21 +76,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">2</span></li></ul>
               </li>
             
@@ -151,7 +142,7 @@
 
   </div>
   <div class="article-entry">
-    <p>Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。  </p>
+    <p>Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。<br><a id="more"></a></p>
 <h3 id="代码思想"><a href="#代码思想" class="headerlink" title="代码思想"></a><strong>代码思想</strong></h3><p>主要实现ListView接口<code>OnScrollListener</code>，重写其中的断<code>onScroll</code>方法，通过判断<code>ListView</code>的<code>item</code>的<code>position</code>触发<code>onScroll</code>方法，提前进行网络请求并将结果添加进相关链表中。  </p>
 <blockquote>
 <p>例如，限定每次加载十个item，我们在滑动到第二个的item的时候进行网络的请求，自动刷新，滑动感比较顺，其中要注意判断item的滑动，一方面onScroll方法在滑动过程会多次执行，另一方面需要判断ListView是在上滑还是在下滑</p>
@@ -168,7 +159,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -176,7 +167,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
       </span>
     </a>
   </div>
