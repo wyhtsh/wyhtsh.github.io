@@ -8,13 +8,13 @@
 
 <title>
   
-    類別: 日记
+    標籤: ListView
   
 </title>
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="华丽小屋">
-<meta property="og:url" content="http://yiva.github.io/categories/随笔/日记/index.html">
+<meta property="og:url" content="http://yiva.github.io/tags/ListView/index.html">
 <meta property="og:site_name" content="华丽小屋">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="华丽小屋">
@@ -111,7 +111,7 @@
       
         <div style="max-width: 1000px">
       
-          <h1>日记</h1>
+          <h1>ListView</h1>
 
 
   
@@ -121,30 +121,40 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2016/08/10/hello-world/" >
-  I&#39;m comming!
+        <a href="/2016/08/10/tech201608102250/" >
+  ListView滑动刷新
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2016/08/10/hello-world/"><span class="article-date">
+        <a href="/2016/08/10/tech201608102250/"><span class="article-date">
   2016-08-10
 </span>
 </a>
         
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/随笔/">随笔</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/随笔/日记/">日记</a></li></ul></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
 	</span>
 
 
         
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ListView/">ListView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OnSroll/">OnSroll</a></li></ul>
+	</span>
+
 
       </div>
       <div class="article-entry">
         
-          <h4 id="开始喽！"><a href="#开始喽！" class="headerlink" title="开始喽！"></a>开始喽！</h4>
+          <p>Android关于ListView的刷新网上有很多，不过对自己的项目而言感觉有出入。该方法记录本人在滑动ListView过程中自动进行刷新。  </p>
+<h3 id="代码思想"><a href="#代码思想" class="headerlink" title="代码思想"></a><strong>代码思想</strong></h3><p>主要实现ListView接口<code>OnScrollListener</code>，重写其中的断<code>onScroll</code>方法，通过判断<code>ListView</code>的<code>item</code>的<code>position</code>触发<code>onScroll</code>方法，提前进行网络请求并将结果添加进相关链表中。  </p>
+<blockquote>
+<p>例如，限定每次加载十个item，我们在滑动到第二个的item的时候进行网络的请求，自动刷新，滑动感比较顺，其中要注意判断item的滑动，一方面onScroll方法在滑动过程会多次执行，另一方面需要判断ListView是在上滑还是在下滑</p>
+</blockquote>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a><strong>实现代码</strong></h3><p><strong>实现onScroll</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> position = -<span class="number">1</span>;<span class="comment">//当前位置记录点</span></div><div class="line"><span class="keyword">private</span> ArrayList&lt;Integer&gt; records = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//记录刷新点</span></div><div class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">OnListScrollListener</span> <span class="keyword">implements</span> <span class="title">AbsListView</span>.<span class="title">OnScrollListener</span> </span>&#123;``</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScrollStateChanged</span><span class="params">(AbsListView view, <span class="keyword">int</span> scrollState)</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScroll</span><span class="params">(AbsListView view, <span class="keyword">int</span> firstVisibleItem, <span class="keyword">int</span> visibleItemCount, <span class="keyword">int</span> totalItemCount)</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> (position != firstVisibleItem) &#123;<span class="comment">//过滤重复位置只触发一次</span></div><div class="line">          position = firstVisibleItem;<span class="comment">//记录当前位置</span></div><div class="line">          <span class="comment">//判断当前位置是否已经被记录，由于首次获得item的焦点一定是由于下滑动作造成的。</span></div><div class="line">          <span class="comment">//因此，通过该步骤实现第一次下滑时对ListView进行刷新</span></div><div class="line">          <span class="keyword">if</span> (!records.contains(position)) &#123;</div><div class="line">              <span class="keyword">if</span> (<span class="number">1</span> == position % <span class="number">10</span>) &#123;</div><div class="line">                  records.add(position);</div><div class="line">                  doRequestURL();<span class="comment">//刷新请求代码</span></div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
         
       </div>
     </div>
