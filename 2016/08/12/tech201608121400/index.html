@@ -8,20 +8,20 @@
 
 <title>
   
-    I&#39;m comming!
+    Oracle 基础篇
   
 </title>
 
-<meta name="description" content="开始喽！">
+<meta name="description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="I'm comming!">
-<meta property="og:url" content="http://yiva.github.io/2016/08/10/hello-world/index.html">
+<meta property="og:title" content="Oracle 基础篇">
+<meta property="og:url" content="http://yiva.github.io/2016/08/12/tech201608121400/index.html">
 <meta property="og:site_name" content="华丽小屋">
-<meta property="og:description" content="开始喽！">
-<meta property="og:updated_time" content="2016-08-12T06:52:34.181Z">
+<meta property="og:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
+<meta property="og:updated_time" content="2016-08-12T07:43:56.803Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I'm comming!">
-<meta name="twitter:description" content="开始喽！">
+<meta name="twitter:title" content="Oracle 基础篇">
+<meta name="twitter:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
 
 
   <link rel="alternative" href="/atom.xml" title="华丽小屋" type="application/atom+xml">
@@ -115,34 +115,53 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-hello-world" class="article article-type-post">
+          <article id="post-tech201608121400" class="article article-type-post">
   
     <h1 class="article-header">
-      I'm comming!
+      Oracle 基础篇
     </h1>
   
   
 
   <div class="article-info">
     <span class="article-date">
-  2016-08-10
+  2016-08-12
 </span>
 
     
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/oracle/">oracle</a></li></ul>
 	</span>
 
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    <h4 id="开始喽！"><a href="#开始喽！" class="headerlink" title="开始喽！"></a>开始喽！</h4>
+    <blockquote>
+<p>开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="Oracle-基本架构"><a href="#Oracle-基本架构" class="headerlink" title="Oracle 基本架构"></a>Oracle 基本架构</h4><h4 id="Oracle-启动方式"><a href="#Oracle-启动方式" class="headerlink" title="Oracle 启动方式"></a>Oracle 启动方式</h4><blockquote>
+<p>Oracle在<code>startup</code>的时候有三种启动参数，分别是<code>nomout</code>、<code>mount</code>、<code>open</code>。分别是Oracle的三种启动状态。</p>
+</blockquote>
+<ol>
+<li><h5 id="startup-nomount"><a href="#startup-nomount" class="headerlink" title="startup nomount"></a>startup nomount</h5><p>在nomount状态下，Oracle启动了instance，此时没有启动数据库，或者数据库还没有被建立，这个时候可以进行控制文件的建立以及数据库的创建，此时有系统管理员可以进行操作。</p>
+</li>
+<li><h5 id="startup-mount-db"><a href="#startup-mount-db" class="headerlink" title="startup mount db"></a>startup mount db</h5><p>先执行<code>nomount</code><br>在此状态下，Oracle可以对相应数据库db进行日志归档以及数据恢复等工作，但仍不能对数据库中的数据进行访问。</p>
+</li>
+<li><h5 id="startup-open-db"><a href="#startup-open-db" class="headerlink" title="startup open db"></a>startup open db</h5><p>执行<code>nomount</code>以及<code>mount</code>，打开所有数据库db的文件，可以对数据库中的数据进行访问。</p>
+</li>
+<li><h5 id="单独执行startup"><a href="#单独执行startup" class="headerlink" title="单独执行startup"></a>单独执行startup</h5>单独执行startup，将按照以下顺序进行执行<br><code>startup nomount</code><br><code>alter database mount</code><br><code>alter database open</code></li>
+</ol>
+<blockquote>
+<p>不同的启动状态下，用户的执行权限不同，根据需要启动相应态度；同时也可以也可以根据启动状态判断相应的数据库故障进行初步确定。</p>
+</blockquote>
+<h4 id="Oracle-关闭方式"><a href="#Oracle-关闭方式" class="headerlink" title="Oracle 关闭方式"></a>Oracle 关闭方式</h4>
   </div>
   <footer class="article-footer">
     
