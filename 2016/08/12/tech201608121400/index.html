@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yiva.github.io/2016/08/12/tech201608121400/index.html">
 <meta property="og:site_name" content="华丽小屋">
 <meta property="og:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
-<meta property="og:updated_time" content="2016-08-15T01:53:48.742Z">
+<meta property="og:updated_time" content="2016-08-15T02:35:36.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 基础篇">
 <meta name="twitter:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
@@ -205,6 +205,29 @@
 </tr>
 </tbody>
 </table>
+<h4 id="通过诊断文件管理数据库实例"><a href="#通过诊断文件管理数据库实例" class="headerlink" title="通过诊断文件管理数据库实例"></a>通过诊断文件管理数据库实例</h4><ul>
+<li>alertSID.log <em>记录下数据库运行时主要事件的命令和结果</em><ul>
+<li>用于记录日常操作信息或诊断数据库错误.</li>
+<li>文件中每一个条目都一个时间戳.</li>
+<li>DBA管理 alertSID.log 文件.</li>
+<li>存储位置由 BACKGROUND_DUMP_DEST参数指定.</li>
+</ul>
+</li>
+<li>Background trace files (后台跟踪文件) <em>每个后台进程的错误都会产生后台跟踪文件</em><ul>
+<li>用于诊断和解决错误.</li>
+<li>当后台进程遇到错误就产生跟踪文件</li>
+<li>存储位置由BACKGROUND_DUMP_DEST参数指定</li>
+</ul>
+</li>
+<li>User Trace files （用户跟踪文件） <em>用户跟踪文件由连到Oracle服务器的用户进程产生</em><ul>
+<li>文件中包含被跟踪的SQL语句的统计信息或用户错误消息.</li>
+<li>当用户会话遇到错误将会产生此文件</li>
+<li>server process也可产生此文件 </li>
+<li>存储位置由USER_DUMP_DEST参数指定</li>
+<li>文件大小由 MAX_DUMP_FILE_SIZE 参数指定，默认值为10M.</li>
+</ul>
+</li>
+</ul>
 
   </div>
   <footer class="article-footer">
