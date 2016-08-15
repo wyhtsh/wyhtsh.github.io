@@ -18,10 +18,12 @@
 <meta property="og:url" content="http://yiva.github.io/2016/08/12/tech201608121400/index.html">
 <meta property="og:site_name" content="华丽小屋">
 <meta property="og:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
-<meta property="og:updated_time" content="2016-08-15T02:35:36.586Z">
+<meta property="og:image" content="http://obxuyy19n.bkt.clouddn.com/oracle_framework.png?imageView2/2/w/500/h/500">
+<meta property="og:updated_time" content="2016-08-15T07:16:58.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 基础篇">
 <meta name="twitter:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
+<meta name="twitter:image" content="http://obxuyy19n.bkt.clouddn.com/oracle_framework.png?imageView2/2/w/500/h/500">
 
 
   <link rel="alternative" href="/atom.xml" title="华丽小屋" type="application/atom+xml">
@@ -146,7 +148,11 @@
 <p>开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。</p>
 </blockquote>
 <a id="more"></a>
-<h4 id="Oracle-基本架构"><a href="#Oracle-基本架构" class="headerlink" title="Oracle 基本架构"></a>Oracle 基本架构</h4><h4 id="Oracle-启动方式"><a href="#Oracle-启动方式" class="headerlink" title="Oracle 启动方式"></a>Oracle 启动方式</h4><blockquote>
+<h4 id="Oracle-基本架构"><a href="#Oracle-基本架构" class="headerlink" title="Oracle 基本架构"></a>Oracle 基本架构</h4><blockquote>
+<p>就用一个图先做一下介绍</p>
+</blockquote>
+<p><img src="http://obxuyy19n.bkt.clouddn.com/oracle_framework.png?imageView2/2/w/500/h/500" alt="oracle_Framework"></p>
+<h4 id="Oracle-启动方式"><a href="#Oracle-启动方式" class="headerlink" title="Oracle 启动方式"></a>Oracle 启动方式</h4><blockquote>
 <p>Oracle在<code>startup</code>的时候有三种启动参数，分别是<code>nomout</code>、<code>mount</code>、<code>open</code>。分别是Oracle的三种启动状态。</p>
 </blockquote>
 <ol>
@@ -222,7 +228,7 @@
 <li>User Trace files （用户跟踪文件） <em>用户跟踪文件由连到Oracle服务器的用户进程产生</em><ul>
 <li>文件中包含被跟踪的SQL语句的统计信息或用户错误消息.</li>
 <li>当用户会话遇到错误将会产生此文件</li>
-<li>server process也可产生此文件 </li>
+<li>server process也可产生此文件</li>
 <li>存储位置由USER_DUMP_DEST参数指定</li>
 <li>文件大小由 MAX_DUMP_FILE_SIZE 参数指定，默认值为10M.</li>
 </ul>
