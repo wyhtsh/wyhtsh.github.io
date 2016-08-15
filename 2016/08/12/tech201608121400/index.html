@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yiva.github.io/2016/08/12/tech201608121400/index.html">
 <meta property="og:site_name" content="华丽小屋">
 <meta property="og:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
-<meta property="og:updated_time" content="2016-08-12T07:43:56.803Z">
+<meta property="og:updated_time" content="2016-08-15T01:53:48.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 基础篇">
 <meta name="twitter:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
@@ -161,7 +161,51 @@
 <blockquote>
 <p>不同的启动状态下，用户的执行权限不同，根据需要启动相应态度；同时也可以也可以根据启动状态判断相应的数据库故障进行初步确定。</p>
 </blockquote>
-<h4 id="Oracle-关闭方式"><a href="#Oracle-关闭方式" class="headerlink" title="Oracle 关闭方式"></a>Oracle 关闭方式</h4>
+<h4 id="Oracle-关闭方式"><a href="#Oracle-关闭方式" class="headerlink" title="Oracle 关闭方式"></a>Oracle 关闭方式</h4><blockquote>
+<p>数据库的关闭方式主要有四种，分别是<code>abort</code>，<code>normal</code>，<code>transactional</code>，<code>immediate</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">abort</th>
+<th style="text-align:center">normal</th>
+<th style="text-align:center">transactional</th>
+<th style="text-align:center">immediate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">允许新连接</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td style="text-align:right">等待当前会话终止</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td style="text-align:right">等等当前事务终止</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td style="text-align:right">发出检查点并关闭文件</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">o</td>
+</tr>
+</tbody>
+</table>
+
   </div>
   <footer class="article-footer">
     
