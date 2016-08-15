@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="华丽小屋">
 <meta property="og:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
 <meta property="og:image" content="http://obxuyy19n.bkt.clouddn.com/oracle_framework.png?imageView2/2/w/500/h/500">
-<meta property="og:updated_time" content="2016-08-15T07:38:22.911Z">
+<meta property="og:updated_time" content="2016-08-15T08:15:22.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 基础篇">
 <meta name="twitter:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
@@ -152,17 +152,19 @@
 <p>就用一个图先做一下介绍</p>
 </blockquote>
 <p><img src="http://obxuyy19n.bkt.clouddn.com/oracle_framework.png?imageView2/2/w/500/h/500" alt="oracle_Framework"></p>
-<ul>
-<li><h5 id="SGA（系统全局区）"><a href="#SGA（系统全局区）" class="headerlink" title="SGA（系统全局区）"></a>SGA（系统全局区）</h5><blockquote>
+<h5 id="SGA（系统全局区）"><a href="#SGA（系统全局区）" class="headerlink" title="SGA（系统全局区）"></a>SGA（系统全局区）</h5><blockquote>
 <p>主要包括数据调整缓冲区，重做日志区、共享池等，由所有服务进程和后台进程共享。对应于实例</p>
 </blockquote>
-</li>
-<li><h5 id="PGA（程序全局区）"><a href="#PGA（程序全局区）" class="headerlink" title="PGA（程序全局区）"></a>PGA（程序全局区）</h5><blockquote>
+<p>在SGA中存在脏缓存块、空闲缓存块以及命中缓存块</p>
+<ul>
+<li>脏缓存块是用来保存被修改过的数据，在Oracle中把被SQL所修改过的数据所存放的块叫作脏数据块</li>
+<li>空间缓存块不包含任何数据，处于数据读取的等待状态</li>
+<li>命中缓存块指正在被使用的缓存块，始终保留在调整缓冲区</li>
+</ul>
+<h5 id="PGA（程序全局区）"><a href="#PGA（程序全局区）" class="headerlink" title="PGA（程序全局区）"></a>PGA（程序全局区）</h5><blockquote>
 <p>非共享，第一个进程会有一个，对应于会话</p>
 <h4 id="Oracle-启动方式"><a href="#Oracle-启动方式" class="headerlink" title="Oracle 启动方式"></a>Oracle 启动方式</h4><p>Oracle在<code>startup</code>的时候有三种启动参数，分别是<code>nomout</code>、<code>mount</code>、<code>open</code>。分别是Oracle的三种启动状态。</p>
 </blockquote>
-</li>
-</ul>
 <ol>
 <li><h5 id="startup-nomount"><a href="#startup-nomount" class="headerlink" title="startup nomount"></a>startup nomount</h5><p>在nomount状态下，Oracle启动了instance，此时没有启动数据库，或者数据库还没有被建立，这个时候可以进行控制文件的建立以及数据库的创建，此时有系统管理员可以进行操作。</p>
 </li>
