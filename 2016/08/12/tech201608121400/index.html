@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="华丽小屋">
 <meta property="og:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
 <meta property="og:image" content="http://obxuyy19n.bkt.clouddn.com/oracle_framework.png?imageView2/2/w/500/h/500">
-<meta property="og:updated_time" content="2016-08-15T08:15:22.694Z">
+<meta property="og:updated_time" content="2016-08-15T08:30:16.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 基础篇">
 <meta name="twitter:description" content="开始工作，重新学习数据库知识，才发现自己之前只能算是会写点SQL，每一个数据库都有存在的价值和特点，目前工作大量用到Oracle，在前辈的指点下一点一点地开始学习，现在把所学的慢慢积累更新。">
@@ -79,21 +79,21 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Oracle/">Oracle</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Oracle/">Oracle</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">7</span></li></ul>
               </li>
             
           
@@ -163,10 +163,13 @@
 </ul>
 <h5 id="PGA（程序全局区）"><a href="#PGA（程序全局区）" class="headerlink" title="PGA（程序全局区）"></a>PGA（程序全局区）</h5><blockquote>
 <p>非共享，第一个进程会有一个，对应于会话</p>
-<h4 id="Oracle-启动方式"><a href="#Oracle-启动方式" class="headerlink" title="Oracle 启动方式"></a>Oracle 启动方式</h4><p>Oracle在<code>startup</code>的时候有三种启动参数，分别是<code>nomout</code>、<code>mount</code>、<code>open</code>。分别是Oracle的三种启动状态。</p>
+</blockquote>
+<hr>
+<h4 id="Oracle-启动方式"><a href="#Oracle-启动方式" class="headerlink" title="Oracle 启动方式"></a>Oracle 启动方式</h4><blockquote>
+<p>Oracle在<code>startup</code>的时候有三种启动参数，分别是<code>nomout</code>、<code>mount</code>、<code>open</code>。分别是Oracle的三种启动状态。</p>
 </blockquote>
 <ol>
-<li><h5 id="startup-nomount"><a href="#startup-nomount" class="headerlink" title="startup nomount"></a>startup nomount</h5><p>在nomount状态下，Oracle启动了instance，此时没有启动数据库，或者数据库还没有被建立，这个时候可以进行控制文件的建立以及数据库的创建，此时有系统管理员可以进行操作。</p>
+<li><h5 id="startup-nomount"><a href="#startup-nomount" class="headerlink" title="startup nomount"></a>startup nomount</h5><p>在nomount状态下，Oracle启动了instance，此时没有启动数据库，或者数据库还没有被建立，这个时候可以进行控制文件立以及数据库的创建和修改，此时有系统管理员可以进行操作。</p>
 </li>
 <li><h5 id="startup-mount-db"><a href="#startup-mount-db" class="headerlink" title="startup mount db"></a>startup mount db</h5><p>先执行<code>nomount</code><br>在此状态下，Oracle可以对相应数据库db进行日志归档以及数据恢复等工作，但仍不能对数据库中的数据进行访问。</p>
 </li>
@@ -221,6 +224,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h4 id="通过诊断文件管理数据库实例"><a href="#通过诊断文件管理数据库实例" class="headerlink" title="通过诊断文件管理数据库实例"></a>通过诊断文件管理数据库实例</h4><ul>
 <li>alertSID.log <em>记录下数据库运行时主要事件的命令和结果</em><ul>
 <li>用于记录日常操作信息或诊断数据库错误.</li>
