@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yiva.github.io/2016/08/22/tech201608221900/index.html">
 <meta property="og:site_name" content="华丽小屋">
 <meta property="og:description" content="使用远程控制台对redhat进行操作安装oracle，由于没有进行图形化界面设置，学习使用命令行方法安装，将安装过程进行记录,前期设置稍稍微繁琐，其实安装起来更方便">
-<meta property="og:updated_time" content="2016-08-23T03:29:32.843Z">
+<meta property="og:updated_time" content="2016-08-23T03:36:30.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redhat6下Oracle静默安装">
 <meta name="twitter:description" content="使用远程控制台对redhat进行操作安装oracle，由于没有进行图形化界面设置，学习使用命令行方法安装，将安装过程进行记录,前期设置稍稍微繁琐，其实安装起来更方便">
@@ -84,7 +84,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redhat/">Redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redhat65/">Redhat65</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redhat/">Redhat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -136,7 +136,7 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redhat65/">Redhat65</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redhat/">Redhat</a></li></ul>
 	</span>
 
 
@@ -157,11 +157,11 @@
 <li>oracle空间配置<br>通过从要目录中新建一个文件夹，并单独挂载到一个盘符上，作为oracle数据库的存储空间，当然也可以再根据数据库各部分的功能进行进一步的细分，这样的效果应该会更好。暂时就在根目录下面建立<code>/oracle</code>作为oracle安装目录</li>
 <li>oracle依赖包的安装<br>oracle的安装需要相关的依赖包，若不提前安装上，在oracle的安装过程中会出现异常，因此我们需要提前将其安上，最好的方式通过<code>yum</code>进行安装配置，考虑到yum库的问题，需要提前检查yum库是否可用。redhat在未注册前不能使用系统提供的库,这里一个是使用安装盘中自带的本地库，另外则重新配置国内的库（<strong>163的不错</strong>），配置好了记得更新</li>
 <li>系统变量配置<br>这里我们需要对oracle的安装环境进行配置，主要是系统参数配置，主机名配置，oracle路径的配置</li>
-<li>用户及组的配置<br>最好是使用独立用户及组进行数据库的管理，我们这里就创建用户<code>oracle</code>进行数据库的管理，组的话主要有对数据库安装的组<code>oinstall</code>，数据库管理员<code>dba</code>，数据库操作<code>oper</code>。暂时都授权到<code>oracle</code>用户，最后把<code>/oracle</code>目录的所有权授予<code>oracle</code>用户。<blockquote>
+<li>用户及组的配置<br>最好是使用独立用户及组进行数据库的管理，我们这里就创建用户<code>oracle</code>进行数据库的管理，组的话主要有对数据库安装的组<code>oinstall</code>，数据库管理员<code>dba</code>，数据库操作<code>oper</code>。暂时都授权到<code>oracle</code>用户，最后把<code>/oracle</code>目录的所有权授予<code>oracle</code>用户。  </li>
+</ul>
+<blockquote>
 <p>上面就是系统相关配置，只是进行了简单的说明，详细的网上很多大家需要对具体参数进行设置的可以<a href="http://blog.csdn.net/zrjdds/article/details/50557074" target="_blank" rel="external">查询</a>  </p>
 </blockquote>
-</li>
-</ul>
 <h3 id="rsp文件配置"><a href="#rsp文件配置" class="headerlink" title="rsp文件配置"></a>rsp文件配置</h3><blockquote>
 <p>这是最关键的一个文件参数设置，静默安装其实就是围绕该文件的设置的参数进行数据库的安装，网上也有许多大神写了相关的参数文件，后来我发现在安装包里response目录下就有<code>db_install.rsp</code>文件对需要配置的参数进行了介绍并有相关提示，其实我们只需要将该文件按照要求进行设置就可以了，很方便，和点下一步一样样的。</p>
 </blockquote>
