@@ -8,20 +8,17 @@
 
 <title>
   
-    redhat本地yum库配置
+    Oracle静默安装
   
 </title>
 
-<meta name="description" content="通过配置系统安装盘的源，安装相应系统软件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redhat本地yum库配置">
-<meta property="og:url" content="http://yiva.github.io/2016/08/18/tech201608181320/index.html">
+<meta property="og:title" content="Oracle静默安装">
+<meta property="og:url" content="http://yiva.github.io/2016/08/22/tech201608221900/index.html">
 <meta property="og:site_name" content="华丽小屋">
-<meta property="og:description" content="通过配置系统安装盘的源，安装相应系统软件">
-<meta property="og:updated_time" content="2016-08-18T08:57:21.239Z">
+<meta property="og:updated_time" content="2016-08-22T10:55:52.564Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redhat本地yum库配置">
-<meta name="twitter:description" content="通过配置系统安装盘的源，安装相应系统软件">
+<meta name="twitter:title" content="Oracle静默安装">
 
 
   <link rel="alternative" href="/atom.xml" title="华丽小屋" type="application/atom+xml">
@@ -115,50 +112,34 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-tech201608181320" class="article article-type-post">
+          <article id="post-tech201608221900" class="article article-type-post">
   
     <h1 class="article-header">
-      redhat本地yum库配置
+      Oracle静默安装
     </h1>
   
   
 
   <div class="article-info">
     <span class="article-date">
-  2016-08-18
+  2016-08-22
 </span>
 
     
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Oracle/">Oracle</a></li></ul>
 	</span>
 
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redhat/">redhat</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    <p>通过配置系统安装盘的源，安装相应系统软件<br><a id="more"></a></p>
-<blockquote>
-<p>许多情况下，redhat安装盘中已经带有大量包装包可供使用，在网络不通（redhat在没有正式注册的时候无法使用系统提供的yum库）时，可以直接配置本地yum进行软件包的安装。<br>我们首先将安装包进行挂载，然后个修改repo文件即可完成配置，具体如下：</p>
-</blockquote>
-<ul>
-<li><h4 id="挂载ISO"><a href="#挂载ISO" class="headerlink" title="挂载ISO"></a>挂载ISO</h4><p>将ISO文件挂载到/mnt/cdrom中 <em>目录没有自己新建</em> <strong>放哪都可以，我一般就放这里</strong></p>
-</li>
-<li><h4 id="配置本地库"><a href="#配置本地库" class="headerlink" title="配置本地库"></a>配置本地库</h4><p>进行<code>/etc/yum.repos.d</code>目录,将之前的.repo文件删除，新建一个<code>.repo</code>文件，输入以下文本<br><code>[servername]
-name=[描述，随便填]
-baseurl=[iso文件挂载点，文中则是file:///mnt/cdrom]
-enabled=[1表示启用，0表示不启用]
-gpgcheck=[检查GPG-KEY，0为不检查，1为检查]
-gpgkey=[gpgcheck=0时无需配置]</code><br>保存退出</p>
-</li>
-<li><h4 id="启用新的库"><a href="#启用新的库" class="headerlink" title="启用新的库"></a>启用新的库</h4>执行<code>yum repolist</code> <em>root权限</em><br>执行后会出现<code>repolist:xxxx</code>的显示，证明成功，如果失败检查baseurl是否正确</li>
-</ul>
-
+    
   </div>
   <footer class="article-footer">
     

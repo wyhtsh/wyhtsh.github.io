@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yiva.github.io/2016/08/15/tech201608151520/index.html">
 <meta property="og:site_name" content="华丽小屋">
 <meta property="og:description" content="在Oracle安装配置中，通过对各参数进行设置从而优化Oracle的性能，简单把遇到的一些参数做整理。">
-<meta property="og:updated_time" content="2016-08-15T07:53:23.781Z">
+<meta property="og:updated_time" content="2016-08-23T01:54:00.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle参数及配置">
 <meta name="twitter:description" content="在Oracle安装配置中，通过对各参数进行设置从而优化Oracle的性能，简单把遇到的一些参数做整理。">
@@ -77,21 +77,21 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Oracle/">Oracle</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Oracle/">Oracle</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redhat/">Redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">7</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">8</span></li></ul>
               </li>
             
           
@@ -143,13 +143,17 @@
   </div>
   <div class="article-entry">
     <blockquote>
-<p>在Oracle安装配置中，通过对各参数进行设置从而优化Oracle的性能，简单把遇到的一些参数做整理。<br><a id="more"></a></p>
+<p>在Oracle安装配置中，通过对各参数进行设置从而优化Oracle的性能，简单把遇到的一些参数做整理。</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="Oracle-参数"><a href="#Oracle-参数" class="headerlink" title="Oracle 参数"></a>Oracle 参数</h3><ul>
 <li><p><strong>SGA初始化控制参数</strong><br><code>SGA_MAX_SIZE</code> <em>最大空间</em><br><code>SGA_TARGET</code>  </p>
 </li>
-<li><p><strong>PGA参数</strong><br><code>DB_BLOCK_SIZE</code> <em>数据库缓冲区单个buffer大小</em><br><code>DB_CACHE_SIZE</code><br><code>DB_nK_CACHE_SIZE</code></p>
+<li><p><strong>PGA参数</strong><br><code>DB_BLOCK_SIZE</code> <em>数据库缓冲区单个块大小</em><br><code>DB_CACHE_SIZE</code> <em>数据库缓冲区大小</em><br><code>DB_nK_CACHE_SIZE</code> <em>非默认区块大小设置</em></p>
 </li>
+</ul>
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><ul>
+<li><strong>改变日志操作模式为归档模式</strong> <em>需在mount状态下进行操作</em><br><code>alter database archivelog</code>  </li>
 </ul>
 
   </div>
