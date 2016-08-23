@@ -8,17 +8,20 @@
 
 <title>
   
-    Oracle静默安装
+    Redhat6下Oracle静默安装
   
 </title>
 
+<meta name="description" content="使用远程控制台对redhat进行操作安装oracle，由于没有进行图形化界面设置，学习使用命令行方法安装，将安装过程进行记录,前期设置稍稍微繁琐，其实安装起来更方便">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle静默安装">
+<meta property="og:title" content="Redhat6下Oracle静默安装">
 <meta property="og:url" content="http://yiva.github.io/2016/08/22/tech201608221900/index.html">
 <meta property="og:site_name" content="华丽小屋">
-<meta property="og:updated_time" content="2016-08-22T10:55:52.564Z">
+<meta property="og:description" content="使用远程控制台对redhat进行操作安装oracle，由于没有进行图形化界面设置，学习使用命令行方法安装，将安装过程进行记录,前期设置稍稍微繁琐，其实安装起来更方便">
+<meta property="og:updated_time" content="2016-08-23T03:29:32.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oracle静默安装">
+<meta name="twitter:title" content="Redhat6下Oracle静默安装">
+<meta name="twitter:description" content="使用远程控制台对redhat进行操作安装oracle，由于没有进行图形化界面设置，学习使用命令行方法安装，将安装过程进行记录,前期设置稍稍微繁琐，其实安装起来更方便">
 
 
   <link rel="alternative" href="/atom.xml" title="华丽小屋" type="application/atom+xml">
@@ -81,7 +84,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redhat/">Redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ListView/">ListView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnSroll/">OnSroll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redhat/">Redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redhat65/">Redhat65</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -115,7 +118,7 @@
           <article id="post-tech201608221900" class="article article-type-post">
   
     <h1 class="article-header">
-      Oracle静默安装
+      Redhat6下Oracle静默安装
     </h1>
   
   
@@ -133,13 +136,57 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redhat65/">Redhat65</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    
+    <blockquote>
+<p>使用远程控制台对redhat进行操作安装oracle，由于没有进行图形化界面设置，学习使用命令行方法安装，将安装过程进行记录,前期设置稍稍微繁琐，其实安装起来更方便</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p><strong>oracle静默安装，即在没有图形化界面的情况下进行数据库的安装配置，通过安装也发现，其实就是对其中的db_install.rsp文件参数进行执行的过程，只要把该文件设置好，安装过程比图形化安装更快捷</strong><br><strong>具体过程如下</strong></p>
+</blockquote>
+<h3 id="系统环境配置"><a href="#系统环境配置" class="headerlink" title="系统环境配置"></a>系统环境配置</h3><blockquote>
+<p>主要是对操作系统的配置，最好的是建立一个单独的用户以及组，然后将oracle数据库进行单独地储存，方便日后的管理维护，这一步网上有很多相关的<a href="http://blog.csdn.net/zrjdds/article/details/50557074" target="_blank" rel="external">介绍</a>，这里针对本人的操作做一些简单的说明。</p>
+</blockquote>
+<p><strong>在这阶段主要需要做以下方面的工作</strong>  </p>
+<ul>
+<li>oracle空间配置<br>通过从要目录中新建一个文件夹，并单独挂载到一个盘符上，作为oracle数据库的存储空间，当然也可以再根据数据库各部分的功能进行进一步的细分，这样的效果应该会更好。暂时就在根目录下面建立<code>/oracle</code>作为oracle安装目录</li>
+<li>oracle依赖包的安装<br>oracle的安装需要相关的依赖包，若不提前安装上，在oracle的安装过程中会出现异常，因此我们需要提前将其安上，最好的方式通过<code>yum</code>进行安装配置，考虑到yum库的问题，需要提前检查yum库是否可用。redhat在未注册前不能使用系统提供的库,这里一个是使用安装盘中自带的本地库，另外则重新配置国内的库（<strong>163的不错</strong>），配置好了记得更新</li>
+<li>系统变量配置<br>这里我们需要对oracle的安装环境进行配置，主要是系统参数配置，主机名配置，oracle路径的配置</li>
+<li>用户及组的配置<br>最好是使用独立用户及组进行数据库的管理，我们这里就创建用户<code>oracle</code>进行数据库的管理，组的话主要有对数据库安装的组<code>oinstall</code>，数据库管理员<code>dba</code>，数据库操作<code>oper</code>。暂时都授权到<code>oracle</code>用户，最后把<code>/oracle</code>目录的所有权授予<code>oracle</code>用户。<blockquote>
+<p>上面就是系统相关配置，只是进行了简单的说明，详细的网上很多大家需要对具体参数进行设置的可以<a href="http://blog.csdn.net/zrjdds/article/details/50557074" target="_blank" rel="external">查询</a>  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="rsp文件配置"><a href="#rsp文件配置" class="headerlink" title="rsp文件配置"></a>rsp文件配置</h3><blockquote>
+<p>这是最关键的一个文件参数设置，静默安装其实就是围绕该文件的设置的参数进行数据库的安装，网上也有许多大神写了相关的参数文件，后来我发现在安装包里response目录下就有<code>db_install.rsp</code>文件对需要配置的参数进行了介绍并有相关提示，其实我们只需要将该文件按照要求进行设置就可以了，很方便，和点下一步一样样的。</p>
+</blockquote>
+<p>我把<code>db_install.rsp</code>我觉得重要的按顺序写下来供参考（<strong>有个需要注意的地方，文件中的路径都要使用绝对路，不然安装是会出错</strong>）：  </p>
+<ul>
+<li><code>oracle.install.responseFileVersion=/oracle/database/install/rspfmt_dbinstall_response_schema_v11_2_0</code><br>这个我们要注意一下它的地址是否正确，注释里面说了<strong>Do not change the following system generated value.</strong> 不是说什么都不能改，install后面的不要动，前面的需要检查一下，比如我的oracle安装目录是在/oracle/database下面，因此要像上面这样写。  </li>
+<li><code>oracle.install.option=INSTALL_DB_SWONLY</code><br>这个是设置oracle的安装方式，有三种：只安装数据库<code>INSTALL_DB_SWONLY</code>，安装数据库并配置<code>INSTALL_DB_AND_CONFIG</code>，升级数据库<code>UPGRADE_DB</code>。我这里只进行软件的安装，数据库的配置在安装好之后再进行详细的配置。</li>
+<li><code>ORACLE_HOSTNAME=nx-rhel65</code><br>系统本机名，使用命令行中使用<code>hostname</code>可以查看，要记得在<code>/etc/hosts</code>中添加  </li>
+<li><code>UNIX_GROUP_NAME=oinstall</code><br>用户组，使用的是oracle用户所在组  </li>
+<li><code>INVENTORY_LOCATION=/oracle/u01/app/oracle/oraInventory</code><br>指定oraInventory目录的路径，一般放在<code>ORACLE_BASE</code>目录下，与<code>product</code>平级  </li>
+<li><code>SELECTED_LANGUAGES=en,zh_CN</code><br>语言设置，具体代码见注释  </li>
+<li><code>ORACLE_HOME=/oracle/u01/app/oracle/product/11.2.0/db_1</code><br><code>ORACLE_HOME</code>路径，之后的软件安装的位置  </li>
+<li><code>ORACLE_BASE=/oracle/u01/app/oracle</code><br><code>ORACLE_BASE</code>路径，oracle根目录</li>
+<li><code>oracle.install.db.InstallEdition=EE</code><br>oracle的安装版本，分别有注释，这是有<code>EE</code>是<code>Enterprise Edition</code>，即企业版</li>
+<li><code>oracle.install.db.DBA_GROUP=dba</code><br>dba用户组</li>
+<li><code>oracle.install.db.OPER_GROUP=oper</code><br>oper操作组</li>
+<li><code>oracle.install.db.config.starterdb.type=GENERAL_PURPOSE</code><br>创建数据库类型，用的是一般类型</li>
+<li><code>oracle.install.db.config.starterdb.globalDBName=OrclDb11g</code><br>数据库名</li>
+<li><code>oracle.install.db.config.starterdb.SID=orcl</code><br>数据库的SID</li>
+<li><code>oracle.install.db.config.starterdb.characterSet=AL32UTF8</code><br>数据库的字符集编码</li>
+<li><code>oracle.install.db.config.starterdb.password.ALL=123</code><br>数据库管理员密码设置，可以使用这个对管理员账号设置相同的密码，也可以单独设置，如果设置了相同的，后面的就可以不设置了</li>
+<li><code>DECLINE_SECURITY_UPDATES=true</code><br>网上说这个要设置为<code>true</code>，不然会报错。  </li>
+</ul>
+<p><strong>主要的参数就是这些了，配好之后就可以输入命令运行了，在<code>database</code>下输入命令<code>./runInstaller -silent -responseFile /oracle/database/response/db_install.rsp</code>(responseFile后面跟的是我们需要调用的rsp文件的绝对路径，不能使用相对路径，如果想要看进度可以在其中加上<code>-showProgress</code>)，运行之后监控着日志，然后坐等安装结束！记得我们没有创建实例这些的，所以开始只能使用sys账号进行登录，再自行建立实例以及库。</strong></p>
+
   </div>
   <footer class="article-footer">
     
